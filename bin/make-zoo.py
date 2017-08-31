@@ -10,24 +10,18 @@ import random
 animals = [
     "Dog",
     "Cat",
-    "Snake"
+    "Snake",
+    "Rabbit",
+    "Yak",
+    "Turtle",
+    "Elephant",
+    "Giraffe",
+    "Tiger",
+    "Zebra"
 ]
 
-names = [
-    "Sassy",
-    "Peaches",
-    "Mittens",
-    "Santas Little Helper",
-    "Snowball",
-    "Buttercup",
-    "Rex",
-    "Fido",
-    "Bullseye",
-    "Harvey",
-    "Excelsior",
-    "Maximus",
-    "Roger",
-]
+names = [n.rstrip() for n in open("names.txt").readlines()]
+names = random.sample(names, 50)
 
 def write_animal_file(name,kind,in_dir):
     file_path = os.path.join(in_dir, name)
